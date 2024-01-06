@@ -7,5 +7,3 @@ const postModel = require("./post");
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Expresssunil" });
 });
-
-module.exports = router;
