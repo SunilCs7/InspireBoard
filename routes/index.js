@@ -10,14 +10,19 @@ passport.use(new localStrategy(userModel.authenticate()));
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Express" });
 });
+
+router.get("/login", function (req, res, next) {
+  res.render("login");
+});
+
 router.get("/profile", isLogedIn, function (req, res, next) {
   res.send("profile");
 });
 
 router.post("/register", function (req, res) {
-  const { username, email, fullname } = req.body;
-  const userData = new userModel({ username, email, fullname });
-  userData.register(userData, req.body.password).then(function () {
+  const { username, email, fullName } = req.body;
+  const userData = new userModel({ username, email, fullName });
+  userModel.register(userData, req.body.password).then(function () {
     passport.authenticate("local")(req, res, function () {
       res.redirect("/profile");
     });
