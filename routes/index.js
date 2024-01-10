@@ -19,7 +19,7 @@ router.get("/login", function (req, res, next) {
 });
 
 router.get("/profile", isLogedIn, function (req, res, next) {
-  res.send("profile");
+  res.render("profile");
 });
 
 router.post("/register", function (req, res) {
@@ -36,7 +36,7 @@ router.post(
   "/login",
   passport.authenticate("local", {
     successRedirect: "profile",
-    failureRedirect: "/",
+    failureRedirect: "/login",
   }),
   function () {}
 );
@@ -51,6 +51,6 @@ router.post("/logout", function (req, res) {
 });
 function isLogedIn(req, res, next) {
   if (req.isAuthenticated()) return next();
-  res.redirect("/");
+  res.redirect("/login");
 }
 module.exports = router;
