@@ -163,3 +163,34 @@ hr {
   background-color: rgb(241, 236, 236);
   border-radius: 20px;
 }
+.error {
+  position: relative;
+  /* Make sure it's positioned relative or absolute for proper alignment */
+  padding: 10px;
+  /* Add some padding for better visibility */
+  margin-bottom: 20px;
+  /* Adjust as needed for spacing between messages or other elements */
+  border: 1px solid #ff0000;
+  /* Red border for an error message */
+  background-color: #ffecec;
+  /* Light red background color */
+  color: #ff0000;
+  /* Red text color */
+  border-radius: 5px;
+  /* Rounded corners for a nicer appearance */
+}
+
+/* Optional: Add animation for a fade-in effect */
+.error {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
