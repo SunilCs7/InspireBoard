@@ -18,8 +18,11 @@ router.get("/login", function (req, res, next) {
   res.render("login", { error: req.flash("error") });
 });
 
-router.get("/profile", isLogedIn, function (req, res, next) {
-  res.render("profile");
+router.get("/profile", isLogedIn, async function (req, res, next) {
+  const user = await userModel.findOne({
+    username: req.session.passport.user,
+  });
+  res.render("profile", { user });
 });
 
 router.post("/register", function (req, res) {
