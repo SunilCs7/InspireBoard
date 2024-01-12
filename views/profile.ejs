@@ -24,9 +24,15 @@
             <p class="tagline">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae.</p>
             <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, sit iusto!</p>
             <a href="logout" class="button">logout</a>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="text" name="fileCaption" placeholder="some caption">
+                <input type="file" name="file">
+                 <button type="submit">Upload</button>           
+ </form>
         </div>
     </div>
     <div class="container">
+        <div class="card"></div>
         <div class="card" style="width: 18rem;">
             <img src="https://images.unsplash.com/photo-1704574155820-47a04256005d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
             <div class="card-body">
