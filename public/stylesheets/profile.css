@@ -1,65 +1,64 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-}
+/* Add your custom styles here */
 
 .containerpers {
-    max-width: 80%;
-    margin: 0 auto;
-    padding: 20px;
+  margin-top: 20px;
 }
 
 .cardpers {
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 20px;
+  text-align: center;
 }
 
 .profile-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  max-width: 100%;
+  border-radius: 50%;
 }
 
 .name {
-    font-size: 24px;
-    margin: 0;
+  margin-top: 10px;
+  font-size: 1.5em; /* Increase the font size for the name */
 }
 
 .username {
-    font-size: 18px;
-    color: #777;
-    margin: 10px 0;
-}
-
-.tagline,
-.description {
-    color: #555;
-    margin: 10px 0;
+  color: #666;
+  font-size: 1.2em; /* Increase the font size for the username */
 }
 
 .button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #f30d19;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+  display: inline-block; /* Make the button inline */
+  margin-top: 10px;
+  padding: 10px 20px; /* Adjust padding */
+  background-color: #3498db; /* Use Betibu UI color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Add a transition effect */
 }
 
 .button:hover {
-    background-color: #cc0b15;
+  background-color: #2980b9; /* Change color on hover */
+}
+
+.post-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.post-card {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+}
+
+.post-img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.post-body {
+  padding: 10px;
+}
+
+.post-title {
+  font-size: 16px;
+  margin: 0;
 }

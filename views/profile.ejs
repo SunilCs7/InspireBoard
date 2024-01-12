@@ -1,14 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Bootstrap Demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-            <link rel="stylesheet" href="/stylesheets/profile.css">
-
+    <link rel="stylesheet" href="/stylesheets/profile.css">
 </head>
 
 <body>
@@ -19,28 +18,37 @@
                 <img src="https://t4.ftcdn.net/jpg/05/50/95/87/360_F_550958748_OeGcRonEUNoVhd0wjd9zSEMhLFIGO9Bt.jpg"
                     alt="Profile Picture">
             </div>
-            <h2 class="name"><%=user.fullName%></h2>
-            <h3 class="username">@<%=user.username%></h3>
+            <h2 class="name">
+                <%=user.fullName%>
+            </h2>
+            <h3 class="username">@<%=user.username%>
+            </h3>
             <p class="tagline">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae.</p>
             <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, sit iusto!</p>
-            <a href="logout" class="button">logout</a>
+            <a href="logout" class="button">Logout</a>
             <form action="/upload" method="post" enctype="multipart/form-data">
-                <input type="text" name="fileCaption" placeholder="some caption">
+                <input type="text" name="fileCaption" placeholder="Some caption">
                 <input type="file" name="file">
-                 <button type="submit">Upload</button>           
- </form>
+                <button type="submit">Upload</button>
+            </form>
         </div>
     </div>
+
     <div class="container">
-        <div class="card"></div>
-        <div class="card" style="width: 18rem;">
-            <img src="https://images.unsplash.com/photo-1704574155820-47a04256005d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-               
-            </div>
+        <div class="post-container">
+            <% user.posts.forEach(function(post){ %>
+                <div class="post-card">
+                    <img src="/images/uploads/<%= post.image %>" class="post-img" alt="Post Image">
+                    <div class="post-body">
+                        <h5 class="post-title">
+                            <%=post.imageText%>
+                        </h5>
+                    </div>
+                </div>
+                <% })%>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
